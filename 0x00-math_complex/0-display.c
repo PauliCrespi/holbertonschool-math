@@ -12,7 +12,10 @@ void display_complex_number(complex c)
 	if (c.re <= 0 && c.im <= 0)
 		printf("\n");
 	if (c.im > 0)
-		printf("%gi\n", c.im);
+		if (c.im == 1)
+			printf("i\n");
+		else
+			printf("%gi\n", c.im);
 	else if (c.im <= 0)
 		printf("\n");
 }
