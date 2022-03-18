@@ -7,15 +7,23 @@ void display_complex_number(complex c)
 {
 	if (c.re > 0)
 		printf("%g", c.re);
-	if (c.re > 0 && c.im > 0)
+	else if (c.re < 0)
+		printf("-%g", c.re);
+	if (c.re != 0 && c.im != 0)
 		printf(" + ");
-	if (c.re <= 0 && c.im <= 0)
+	if (c.re == 0 && c.im == 0)
 		printf("\n");
-	if (c.im > 0)
+	if (c.im != 0)
+	{
 		if (c.im == 1)
 			printf("i\n");
-		else
+		else if (c.im == -1)
+			printf("-i\n");
+		else if (c.im < 0)
+			printf("-%gi\n", c.im);
+		else if (c.im > 0)
 			printf("%gi\n", c.im);
-	else if (c.im <= 0)
+	}
+	else if (c.re != 0 && c.im == 0)
 		printf("\n");
 }
